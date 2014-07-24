@@ -7,7 +7,6 @@ using CarPoolDomain;
 using NSubstitute;
 using NodaTime;
 
-
 namespace CarPoolDomain.Tests
 {
     [TestClass]
@@ -70,5 +69,16 @@ namespace CarPoolDomain.Tests
             Assert.IsTrue(wasCalled);
         }
 
+    }
+
+    public  class StubClock : IClock
+    {
+        public Instant Now
+        {
+            get
+            {
+                return new Instant(14062364751826737);
+            }
+        }
     }
 }
