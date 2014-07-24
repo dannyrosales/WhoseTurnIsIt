@@ -56,5 +56,19 @@ namespace CarPoolDomain.Tests
             _drivingCalendarEventListener.Received().SetDrivingDays(aListOfHolidays);
         }
 
+        [TestMethod]
+        public void DesignateDriverNewDay_EventIsRaisedCorrectly()
+        {
+            //arrange
+            var wasCalled = false;
+            _drivingCalendarEventListener.DesignateDriverOnNewDay += (sender, args) => wasCalled = true;
+
+            //act
+            _drivingCalendarEventListener.DesignateDriverOnNewDay += Raise.Event();
+
+            //assert/
+            Assert.IsTrue(wasCalled);
+        }
+
     }
 }
