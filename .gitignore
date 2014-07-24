@@ -1,0 +1,13 @@
+#ignore testsetting files
+TestResults/
+packages/
+
+#exclude UML file
+*.cd
+
+#exclude Visual Studio files
+[Oo]bj*/
+[Bb]in*/
+[Dd]ebug*/
+[Rr]elease*/
+*.testsettings
